@@ -9,6 +9,7 @@ public class CoinCounter : MonoBehaviour
     [Header("UI References")] [SerializeField]
     private RectTransform coinIconUI; 
 
+    [SerializeField] private GameAnalytics gameAnalytics;
     [SerializeField] private TMP_Text[] coinText;
     [SerializeField] private Canvas mainCanvas; 
     [SerializeField] private RectTransform coinPrefabUI;
@@ -41,6 +42,7 @@ public class CoinCounter : MonoBehaviour
 
     public void SpawnFlyingCoin(Vector3 worldPos, int amount = 1)
     {
+        gameAnalytics.TakedMoney += amount;
         RectTransform flyingCoin = Instantiate(coinPrefabUI, mainCanvas.transform);
         flyingCoin.gameObject.SetActive(true);
         Vector3 screenPos = Camera.main.WorldToScreenPoint(worldPos);
@@ -62,6 +64,7 @@ public class CoinCounter : MonoBehaviour
 
     private void AddCoin(int amount)
     {
+        
         coinCount += amount;
         foreach (var text in coinText)
         {

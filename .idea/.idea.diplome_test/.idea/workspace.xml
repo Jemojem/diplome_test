@@ -6,15 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="4d51e888-086c-448a-b2b0-e59a5fd3be69" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/PlayerConfiguration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configurations/PlayerConfiguration.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefab/ShopSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefab/ShopSystem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefab/SlotObject.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefab/SlotObject.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/New Enemy Configuration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configurations/New Enemy Configuration.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefab/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefab/Canvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/PetConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/PetConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/PetStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/PetStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/IDamageable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetFollowState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetFollowState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
@@ -106,7 +105,9 @@
       <workItem from="1760733826067" duration="4781000" />
       <workItem from="1761157191225" duration="3100000" />
       <workItem from="1761247982645" duration="6151000" />
-      <workItem from="1761379478676" duration="851000" />
+      <workItem from="1761379478676" duration="1626000" />
+      <workItem from="1761397400982" duration="1822000" />
+      <workItem from="1761504942560" duration="1064000" />
     </task>
     <servers />
   </component>

@@ -82,7 +82,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
 
     public bool CanTakeDamage { get; private set; }
 
-    public void TakeDamage(int amount , bool isPermanent = false)
+    public void TakeDamage(int amount , bool isPermanent = false, bool isPet = false)
     {
         if (isPermanent)
         {
@@ -91,6 +91,15 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
             return;
         }
         if (CanTakeDamage == false) return;
+        var analitycs = FindAnyObjectByType<GameAnalytics>();
+        if (isPet)
+        {
+            analitycs.DamagePets++;
+        }
+        else
+        {
+            analitycs.DamagePlayer++;
+        }
         var isCrit = characterParamSystem.CritChance > Random.Range(0,100);
         if (isCrit)
         {
@@ -103,6 +112,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
         stateMachine.SetState(flip);
         if (currentHealth <= 0)
         {
+            analitycs.KilledEnemy++;
             CanTakeDamage = false;
             stateMachine.SetState(new State());
             enemyAnimatorController.SetTrigger(EnemyAnimationType.Dead);

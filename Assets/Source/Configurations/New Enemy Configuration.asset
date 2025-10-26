@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 2.5
   Damage: 5
-  AttackRange: 0.57
+  AttackRange: 1
   AttackCooldown: 0.8
   Health: 10
   DropChance: 50

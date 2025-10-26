@@ -81,6 +81,7 @@ public class ShopSystem : MonoBehaviour
                 {
                     if (slot.ShopConfiguration.BuyEvent == ShopBuyEvent.Pet)
                     {
+                        FindAnyObjectByType<GameAnalytics>().AmountPets++;
                         Instantiate(canvas);
                     }
                 }

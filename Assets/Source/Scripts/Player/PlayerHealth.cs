@@ -25,14 +25,16 @@ public class PlayerHealth : MonoBehaviour
         {
             if (characterParamSystem.Regeneration != 0 && currentHealth != characterParamSystem.Health)
             {
-                damagePopupSpawner.Show(transform.position,characterParamSystem.Regeneration,Color.green);
+                damagePopupSpawner.Show(transform.position, characterParamSystem.Regeneration, Color.green);
                 currentHealth += characterParamSystem.Regeneration;
-                if(currentHealth > characterParamSystem.Health) currentHealth = characterParamSystem.Health;
+                if (currentHealth > characterParamSystem.Health) currentHealth = characterParamSystem.Health;
                 UpdateHealthBar();
             }
+
             yield return new WaitForSeconds(1f);
         }
     }
+
     public void RecalculateHealth()
     {
         currentHealth = characterParamSystem.Health;
@@ -41,16 +43,21 @@ public class PlayerHealth : MonoBehaviour
 
     public void AddHealth(int amount)
     {
-        damagePopupSpawner.Show(transform.position,amount,Color.green);
+        damagePopupSpawner.Show(transform.position, amount, Color.green);
         currentHealth += amount;
-        if(currentHealth > characterParamSystem.Health) currentHealth = characterParamSystem.Health;
+        if (currentHealth > characterParamSystem.Health) currentHealth = characterParamSystem.Health;
         UpdateHealthBar();
     }
-    
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         UpdateHealthBar();
+        if (currentHealth <= 0)
+        {
+            FindAnyObjectByType<LoseScreen>(FindObjectsInactive.Include).Show();
+            currentHealth = 0;
+        }
     }
 
     private void UpdateHealthBar(bool withSlider = true)

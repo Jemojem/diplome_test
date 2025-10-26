@@ -69,7 +69,7 @@ public class PetAttackState : State
         var damageable = target.GetComponent<IDamageable>();
         if (damageable != null)
         {
-            damageable.TakeDamage(paramSystem.Damage);
+            damageable.TakeDamage(paramSystem.Damage, isPet:true);
         }
     }
 }
