@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CharacterParamSystem : MonoBehaviour
 {
-    [SerializeField] private PlayerConfiguration playerConfiguration;
+    [SerializeField] public PlayerConfiguration playerConfiguration;
 
     // Абсолютные бонусы
     private float speedBonus;
@@ -53,6 +53,8 @@ public class CharacterParamSystem : MonoBehaviour
     public float AttackRange => (playerConfiguration.DefaultAttachRange + attackRangeBonus) *
                                 (1 + attackRangePercentBonus / 100f);
 
+    public bool CanAttackMelee => playerConfiguration.CanAttackMelee;
+    public bool CanAttackDistance => playerConfiguration.CanAttackDistance;
     public int Health => Mathf.RoundToInt((playerConfiguration.DefaultHealth + healthBonus) *
                                           (1 + healthPercentBonus / 100f));
 

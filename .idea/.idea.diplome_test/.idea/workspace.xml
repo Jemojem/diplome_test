@@ -6,15 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4d51e888-086c-448a-b2b0-e59a5fd3be69" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/New Enemy Configuration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configurations/New Enemy Configuration.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Prefab/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Prefab/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nine Pines Animation/2D Character Sprite Animation - Penguin/sprites/Player.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nine Pines Animation/2D Character Sprite Animation - Penguin/sprites/Player.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/PlayerConfiguration.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/PlayerConfiguration.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/IDamageable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Pet/States/PetAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CharacterParamSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CharacterParamSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/ProjectileSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/ProjectileSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +28,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Source/Scripts/CharacterChanger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Source/Scripts/Chest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Source/Scripts/DrawingCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyAttack.cs" root0="FORCE_HIGHLIGHTING" />
@@ -107,7 +110,9 @@
       <workItem from="1761247982645" duration="6151000" />
       <workItem from="1761379478676" duration="1626000" />
       <workItem from="1761397400982" duration="1822000" />
-      <workItem from="1761504942560" duration="1064000" />
+      <workItem from="1761504942560" duration="1585000" />
+      <workItem from="1761593224217" duration="681000" />
+      <workItem from="1761858950007" duration="2613000" />
     </task>
     <servers />
   </component>

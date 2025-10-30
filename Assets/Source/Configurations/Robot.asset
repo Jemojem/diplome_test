@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f4c8157cb1a42fe80b82be2406bfa81, type: 3}
-  m_Name: PlayerConfiguration
+  m_Name: Robot
   m_EditorClassIdentifier: 
-  <DefaultSpeed>k__BackingField: 4
-  <DefaultProjectileSpeed>k__BackingField: 10
-  <DefaultSpawnProjectileCooldown>k__BackingField: 2
+  <DefaultSpeed>k__BackingField: 5
+  <DefaultProjectileSpeed>k__BackingField: 15
+  <DefaultSpawnProjectileCooldown>k__BackingField: 3
   <DefaultProjectileAmount>k__BackingField: 1
   <DefaultHealth>k__BackingField: 25
-  <DefaultAttackSpeed>k__BackingField: 1
-  <DefaultAttachRange>k__BackingField: 2
+  <DefaultAttackSpeed>k__BackingField: 0.22
+  <DefaultAttachRange>k__BackingField: 1.5
   <DefaultAttackDamage>k__BackingField: 3
-  <DefaultAttachDamage>k__BackingField: 9
+  <DefaultAttachDamage>k__BackingField: 7
   <DefaultCritChance>k__BackingField: 10
   <DefaultArmore>k__BackingField: 0
   <DefaultMiss>k__BackingField: 0
@@ -28,3 +28,5 @@ MonoBehaviour:
   <DefaultLucky>k__BackingField: 0
   <DefaultMoneyPerLevel>k__BackingField: 0
   <DefaultLuckyChest>k__BackingField: 10
+  CanAttackMelee: 1
+  CanAttackDistance: 1

@@ -24,4 +24,6 @@ public class PlayerConfiguration : ScriptableObject
     [field: SerializeField] public int DefaultLucky { get; private set; }
     [field: SerializeField] public int DefaultMoneyPerLevel { get; private set; }
     [field: SerializeField] public int DefaultLuckyChest { get; private set; }
+    public bool CanAttackMelee = true;
+    public bool CanAttackDistance = true;
 }

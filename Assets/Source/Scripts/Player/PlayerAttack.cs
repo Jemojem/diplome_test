@@ -20,14 +20,15 @@ public class PlayerAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canAttach == false) return;
+        
+        if (canAttach == false || characterParamSystem.CanAttackMelee == false) return;
         var foundTargets = GetFoundColliders();
         if (foundTargets.Length == 0) return;
         foreach (var foundTarget in foundTargets)
         {
             foundTarget.GetComponent<IDamageable>().TakeDamage(characterParamSystem.AttachDamage);
             canAttach = false;
-            animator.Play("Attack");
+            animator.Play("AttackMelee",1);
             DOVirtual.DelayedCall(characterParamSystem.AttackSpeed, () => { canAttach = true; });
         }
     }

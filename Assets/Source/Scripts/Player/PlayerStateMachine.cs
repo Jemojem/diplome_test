@@ -7,7 +7,7 @@ public class PlayerStateMachine : MonoBehaviour
     [SerializeField] private CharacterParamSystem characterParamSystem;
     [SerializeField] private Animator animator;
     [SerializeField] private Joystick joystick;
-    [SerializeField] private Transform rotateObject;
+    [SerializeField] public Transform rotateObject;
 
     private StateMachine.StateMachine stateMachine;
     private PlayerAnimatorController playerAnimatorController;
@@ -17,7 +17,7 @@ public class PlayerStateMachine : MonoBehaviour
         InitializeStateMachine();
     }
 
-    private void InitializeStateMachine()
+    public void InitializeStateMachine()
     {
         playerAnimatorController = new PlayerAnimatorController(animator);
         var idleState = new PlayerAnimationState(PlayerAnimationType.Idle, playerAnimatorController);

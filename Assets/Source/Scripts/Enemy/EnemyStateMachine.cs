@@ -46,7 +46,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
 
         enemyAttackState = new EnemyAttackState(enemyConfiguration, enemyAnimatorController, transform, player);
 
-        DOVirtual.DelayedCall(2, () => { CanTakeDamage = true; });
+        DOVirtual.DelayedCall(0.6f, () => { CanTakeDamage = true; });
         spawn.AddTransition(new StateTransition(idle,
             new TemporaryCondition(enemyAnimatorController.GetAnimationDuration(EnemyAnimationType.Spawn))));
 

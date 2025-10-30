@@ -1,4 +1,5 @@
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour
@@ -12,6 +13,7 @@ public class ProjectileSpawner : MonoBehaviour
     [Header("Curve Parameters")] public float minAmplitude = 0.3f;
     public float maxAmplitude = 1.2f;
     public float minFrequency = 1f;
+    public Animator animator;
     public float maxFrequency = 3f;
 
     private float lastFireTime = -Mathf.Infinity;
@@ -44,17 +46,19 @@ public class ProjectileSpawner : MonoBehaviour
             .ToArray();
 
         if (sorted.Length == 0) return;
-
-        // Сколько снарядов будем выпустить
         int ammoToUse = Mathf.Clamp(availableProjectiles, 0, availableProjectiles);
         if (ammoToUse <= 0) return;
-
-        // Раздаём снаряды по ближайшим целям: по одному на каждую цель, по кругу, пока не исчерпаем ammoToUse
-        for (int i = 0; i < ammoToUse; i++)
+        if (characterParamSystem.CanAttackDistance)
         {
-            GameObject target = sorted[i % sorted.Length]; // round-robin по списку ближайших
-            if (target != null)
-                SpawnProjectileTowards(target.transform);
+            animator.Play("AttackDistance",2);
+            DOVirtual.DelayedCall(0.6f, () =>
+            {
+                for (int i = 0; i < ammoToUse; i++)
+                {
+                    GameObject target = sorted[i % sorted.Length]; // round-robin по списку ближайших
+                    if (target != null) SpawnProjectileTowards(target.transform);
+                }
+            });
         }
     }
 
