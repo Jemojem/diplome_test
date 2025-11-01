@@ -31,6 +31,7 @@ public class HealthBarUI : MonoBehaviour
     public void UpdateHealth(float currentHealth, float maxHealth)
     {
         healthSlider.fillAmount = currentHealth / maxHealth;
+        
         ShowWithHit();
     }
 

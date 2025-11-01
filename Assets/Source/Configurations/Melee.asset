@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Melee
   m_EditorClassIdentifier: 
   <DefaultSpeed>k__BackingField: 4
-  <DefaultProjectileSpeed>k__BackingField: 10
-  <DefaultSpawnProjectileCooldown>k__BackingField: 2
-  <DefaultProjectileAmount>k__BackingField: 1
+  <DefaultProjectileSpeed>k__BackingField: 0
+  <DefaultSpawnProjectileCooldown>k__BackingField: 0
+  <DefaultProjectileAmount>k__BackingField: 0
   <DefaultHealth>k__BackingField: 25
   <DefaultAttackSpeed>k__BackingField: 1
   <DefaultAttachRange>k__BackingField: 2
@@ -24,8 +24,9 @@ MonoBehaviour:
   <DefaultCritChance>k__BackingField: 10
   <DefaultArmore>k__BackingField: 0
   <DefaultMiss>k__BackingField: 0
-  <DefaultRegeneration>k__BackingField: 0
+  <DefaultRegeneration>k__BackingField: 1
   <DefaultLucky>k__BackingField: 0
   <DefaultMoneyPerLevel>k__BackingField: 0
   <DefaultLuckyChest>k__BackingField: 10
-  CanAttackMelee: 0
+  CanAttackMelee: 1
+  CanAttackDistance: 0

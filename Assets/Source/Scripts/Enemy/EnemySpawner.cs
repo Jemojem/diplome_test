@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Настройки спауна")] [SerializeField]
-    private GameObject enemyPrefab;
+    [Header("Настройки спауна")] 
+    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject magicPrefab;
 
     [SerializeField] private CharacterParamSystem characterParamSystem;
     [SerializeField] private float spawnRadius = 10f;
@@ -13,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private int maxTries = 30;
     [SerializeField] private ShopSystem shopSystem;
+    [SerializeField] private GameManager gameManager;
     private int spawnIndex = 0;
     [SerializeField] private float lateralJitter = 1f;
 
@@ -24,7 +26,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (enemyPrefab == null || player == null) return;
         Vector2 spawnPosition = GetDirectionalSpawnPosition();
-        var enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        var prefab = enemyPrefab;
+        if (gameManager.currentLevel > 1)
+        {
+            prefab = Random.Range(0,10) < 2 ? magicPrefab : prefab;
+        }
+        var enemy = Instantiate(prefab, spawnPosition, Quaternion.identity);
         var enemyState = enemy.GetComponent<EnemyStateMachine>();
         enemyState.Initialize(player, characterParamSystem);
     }

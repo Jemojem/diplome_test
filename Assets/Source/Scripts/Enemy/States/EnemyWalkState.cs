@@ -1,3 +1,4 @@
+using System;
 using StateMachine;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class EnemyWalkState : State
     private readonly Transform self;
     private readonly Transform target;
     private readonly float scale;
+
     public EnemyWalkState(EnemyConfiguration config, EnemyAnimatorController animatorController, Transform self,
         Transform target)
     {
@@ -39,6 +41,7 @@ public class EnemyWalkState : State
             dir = dir.normalized;
             self.position += dir * (config.MoveSpeed * Time.deltaTime);
         }
+
         if (dir.x > 0.01f)
         {
             self.localScale = new Vector3(scale, scale, scale);

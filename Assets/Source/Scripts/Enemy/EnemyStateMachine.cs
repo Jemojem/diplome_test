@@ -7,20 +7,20 @@ using Random = UnityEngine.Random;
 
 public class EnemyStateMachine : MonoBehaviour, IDamageable
 {
-    [SerializeField] private EnemyConfiguration enemyConfiguration;
-    [SerializeField] private Animator animator;
-    [SerializeField] private BackflipObject flipObject;
-    [SerializeField] private GameObject hitEffect;
-    [SerializeField] private GameObject droppedLoot;
-    [SerializeField] private GameObject chest;
+    [SerializeField] protected EnemyConfiguration enemyConfiguration;
+    [SerializeField] protected Animator animator;
+    [SerializeField] protected BackflipObject flipObject;
+    [SerializeField] protected GameObject hitEffect;
+    [SerializeField] protected GameObject droppedLoot;
+    [SerializeField] protected GameObject chest;
 
-    private Transform player;
-    private StateMachine.StateMachine stateMachine;
-    private EnemyAnimatorController enemyAnimatorController;
-    private EnemyGetHitState flip;
-    private int currentHealth;
-    private EnemyAttackState enemyAttackState;
-    private CharacterParamSystem characterParamSystem;
+    protected Transform player;
+    protected StateMachine.StateMachine stateMachine;
+    protected EnemyAnimatorController enemyAnimatorController;
+    protected EnemyGetHitState flip;
+    protected int currentHealth;
+    protected EnemyAttackState enemyAttackState;
+    protected CharacterParamSystem characterParamSystem;
 
     public event Action OnEnemyDead;
     public Transform Target => player;
@@ -33,7 +33,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
         InitializeStateMachine();
     }
 
-    private void InitializeStateMachine()
+    protected virtual void InitializeStateMachine()
     {
         enemyAnimatorController = new EnemyAnimatorController(animator);
 
@@ -80,9 +80,9 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
         enemyAttackState?.OnAttackHit();
     }
 
-    public bool CanTakeDamage { get; private set; }
+    public bool CanTakeDamage { get; protected set; }
 
-    public void TakeDamage(int amount , bool isPermanent = false, bool isPet = false)
+    public void TakeDamage(int amount, bool isPermanent = false, bool isPet = false)
     {
         if (isPermanent)
         {
@@ -90,6 +90,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
             Destroy(gameObject);
             return;
         }
+
         if (CanTakeDamage == false) return;
         var analitycs = FindAnyObjectByType<GameAnalytics>();
         if (isPet)
@@ -100,11 +101,13 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
         {
             analitycs.DamagePlayer++;
         }
-        var isCrit = characterParamSystem.CritChance > Random.Range(0,100);
+
+        var isCrit = characterParamSystem.CritChance > Random.Range(0, 100);
         if (isCrit)
         {
             amount *= 2;
         }
+
         currentHealth -= amount;
         var hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(hit, 3f);

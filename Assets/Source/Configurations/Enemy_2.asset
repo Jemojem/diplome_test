@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f10a70428a9a7143893dfd1836f6972, type: 3}
-  m_Name: New Enemy Configuration
+  m_Name: Enemy_2
   m_EditorClassIdentifier: 
-  MoveSpeed: 2.5
-  Damage: 5
+  MoveSpeed: 3
+  Damage: 8
   AttackRange: 1
-  AttackCooldown: 0.8
+  AttackCooldown: 2
   Health: 10
-  DropChance: 50
+  DropChance: 25

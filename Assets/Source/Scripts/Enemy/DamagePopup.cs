@@ -18,6 +18,14 @@ public class DamagePopup : MonoBehaviour
         _textMesh.color = color;
         Animate();
     }
+    
+    public void Setup(string message, Color color)
+    {
+        _textMesh.text = message;
+        _textMesh.color = color;
+        Animate();
+    }
+    
 
     private void Animate()
     {

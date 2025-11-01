@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -51,6 +52,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        var miss = characterParamSystem.Miss >= Random.Range(0, 100);
+        if (miss)
+        {
+            damagePopupSpawner.Show(transform.position, "miss", Color.magenta);
+            return;
+        }
+
+        damage -= characterParamSystem.Armor;
+        if (damage < 1) damage = 1;
         currentHealth -= damage;
         UpdateHealthBar();
         if (currentHealth <= 0)

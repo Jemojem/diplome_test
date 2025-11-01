@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     [Header("Animation Settings")] [SerializeField]
     private float fadeDuration = 0.5f;
 
-    private int currentLevel;
+    public int currentLevel;
 
     [SerializeField] private float waveDisplayTime = 1.5f;
     private Tween currentTween;

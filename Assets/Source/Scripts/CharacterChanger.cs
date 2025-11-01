@@ -54,8 +54,10 @@ public class CharacterChanger : MonoBehaviour
         foreach (var character in _characters)
         {
             character.objectGame.SetActive(false);
+            character.iconFirst.gameObject.SetActive(false);
         }
         var newCharacter = _characters.First(t=>t.characterType == characterType);
+        newCharacter.iconFirst.gameObject.SetActive(true);
         _animator.runtimeAnimatorController = newCharacter.animatorController;
         newCharacter.objectGame.SetActive(true);
         _playerStateMachine.rotateObject = newCharacter.objectGame.transform;
@@ -72,6 +74,7 @@ public class Character
     public RuntimeAnimatorController animatorController;
     public GameObject objectGame;
     public Button selectButton;
+    public GameObject iconFirst;
 }
 
 public enum CharacterType
