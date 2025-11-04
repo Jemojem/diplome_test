@@ -18,6 +18,7 @@ public class CharacterChanger : MonoBehaviour
     [SerializeField] private CharacterParamSystem _characterParamSystem;
 
     private bool _isShow;
+
     private void Awake()
     {
         _open.onClick.AddListener(Show);
@@ -26,6 +27,14 @@ public class CharacterChanger : MonoBehaviour
         {
             var type = character.characterType;
             character.selectButton.onClick.AddListener(() => SetCharacter(type));
+            character.panelButton.onClick.AddListener(() =>
+            {
+                foreach (var characters in _characters)
+                {
+                    var type2 = characters.characterType;
+                    characters.selectPanel.gameObject.SetActive(type2 == type);
+                }
+            });
         }
 
         SetCharacter(CharacterType.Melee);
@@ -41,14 +50,15 @@ public class CharacterChanger : MonoBehaviour
         characterGroup.DOKill();
         characterGroup.DOFade(1, 0.3f);
     }
-    
+
     private void Hide()
     {
         if (!_isShow) return;
         _isShow = false;
         characterGroup.DOKill();
-        characterGroup.DOFade(0, 0.3f).OnComplete(()=>{ gameObject.SetActive(false);});
+        characterGroup.DOFade(0, 0.3f).OnComplete(() => { gameObject.SetActive(false); });
     }
+
     private void SetCharacter(CharacterType characterType)
     {
         foreach (var character in _characters)
@@ -56,13 +66,15 @@ public class CharacterChanger : MonoBehaviour
             character.objectGame.SetActive(false);
             character.iconFirst.gameObject.SetActive(false);
         }
-        var newCharacter = _characters.First(t=>t.characterType == characterType);
+
+        var newCharacter = _characters.First(t => t.characterType == characterType);
         newCharacter.iconFirst.gameObject.SetActive(true);
         _animator.runtimeAnimatorController = newCharacter.animatorController;
         newCharacter.objectGame.SetActive(true);
         _playerStateMachine.rotateObject = newCharacter.objectGame.transform;
         _characterParamSystem.playerConfiguration = newCharacter.characterConfig;
         _playerStateMachine.InitializeStateMachine();
+        Hide();
     }
 }
 
@@ -75,6 +87,8 @@ public class Character
     public GameObject objectGame;
     public Button selectButton;
     public GameObject iconFirst;
+    public GameObject selectPanel;
+    public Button panelButton;
 }
 
 public enum CharacterType
