@@ -9,15 +9,17 @@ public class EnemyWalkState : State
     private readonly Transform self;
     private readonly Transform target;
     private readonly float scale;
+    private readonly float speedMultiplier;
 
     public EnemyWalkState(EnemyConfiguration config, EnemyAnimatorController animatorController, Transform self,
-        Transform target)
+        Transform target, float speedMultiplier = 1f)
     {
         this.config = config;
         this.animatorController = animatorController;
         this.self = self;
         this.target = target;
         this.scale = self.localScale.x;
+        this.speedMultiplier = speedMultiplier;
     }
 
     public override void OnStateEnter()
@@ -39,7 +41,7 @@ public class EnemyWalkState : State
         if (dir.sqrMagnitude > 0.0001f)
         {
             dir = dir.normalized;
-            self.position += dir * (config.MoveSpeed * Time.deltaTime);
+            self.position += dir * (config.MoveSpeed * speedMultiplier * Time.deltaTime);
         }
 
         if (dir.x > 0.01f)

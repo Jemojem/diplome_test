@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private float timer;
-    [SerializeField] private float duration;
     [SerializeField] private EnemySpawner spawner;
+    [SerializeField] private GameParamSystem gameParamSystem;
 
     [Header("UI Elements")] [SerializeField]
     private TMP_Text waveText;
@@ -26,7 +25,8 @@ public class GameManager : MonoBehaviour
     {
         waveText.alpha = 0f;
         timerText.alpha = 0f;
-      
+        if (gameParamSystem == null)
+            gameParamSystem = FindObjectOfType<GameParamSystem>();
     }
 
     public void StartWave(int waveNumber)
@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour
 
         waveText.text = $"ВОЛНА {waveNumber}";
 
+        var waveDuration = gameParamSystem != null ? gameParamSystem.WaveDuration : 60f;
         Sequence seq = DOTween.Sequence();
-        SetTimer(timer);
+        SetTimer(waveDuration);
         // Появление волны с пульсацией
         seq.AppendCallback(() =>
         {
@@ -76,6 +77,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         currentLevel++;
+        if (gameParamSystem != null)
+            gameParamSystem.ApplyLevelProgression();
         StartWave(currentLevel);
     }
 
@@ -83,16 +86,19 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(duration);
+            var spawnCooldown = gameParamSystem != null ? gameParamSystem.EnemySpawnCooldown : 1f;
+            yield return new WaitForSeconds(spawnCooldown);
             spawner.SpawnEnemy();
         }
     }
 
     private IEnumerator TimerCoroutine()
     {
-        for (int i = 0; i < timer; i++)
+        var waveDuration = gameParamSystem != null ? gameParamSystem.WaveDuration : 60f;
+        var waveDurationInt = Mathf.RoundToInt(waveDuration);
+        for (int i = 0; i < waveDurationInt; i++)
         {
-            SetTimer(timer - i);
+            SetTimer(waveDuration - i);
             yield return new WaitForSeconds(1f);
         }
 
@@ -102,6 +108,13 @@ public class GameManager : MonoBehaviour
         {
             enemyState.TakeDamage(1000,true);
         }
+
+        var levelReward = gameParamSystem != null ? gameParamSystem.LevelReward : 0;
+        if (levelReward > 0 && CoinCounter.Instance != null)
+        {
+            CoinCounter.Instance.SpawnFlyingCoin(Vector3.zero, levelReward);
+        }
+
         spawner.SpawnShop();
     }
 }

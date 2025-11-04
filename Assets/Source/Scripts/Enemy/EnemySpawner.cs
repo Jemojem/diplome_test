@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject magicPrefab;
 
     [SerializeField] private CharacterParamSystem characterParamSystem;
+    [SerializeField] private GameParamSystem gameParamSystem;
     [SerializeField] private float spawnRadius = 10f;
     [SerializeField] private float minDistanceToPlayer = 3f;
     [SerializeField] private Transform player;
@@ -33,7 +34,9 @@ public class EnemySpawner : MonoBehaviour
         }
         var enemy = Instantiate(prefab, spawnPosition, Quaternion.identity);
         var enemyState = enemy.GetComponent<EnemyStateMachine>();
-        enemyState.Initialize(player, characterParamSystem);
+        if (gameParamSystem == null)
+            gameParamSystem = FindObjectOfType<GameParamSystem>();
+        enemyState.Initialize(player, characterParamSystem, gameParamSystem);
     }
 
     public void SpawnShop()

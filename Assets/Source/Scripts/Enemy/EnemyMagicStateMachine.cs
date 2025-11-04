@@ -11,9 +11,11 @@ public class EnemyMagicStateMachine : EnemyStateMachine
     {
         enemyAnimatorController = new EnemyAnimatorController(animator);
 
+        var speedMultiplier = gameParamSystem != null ? gameParamSystem.EnemySpeedMultiplier : 1f;
+
         var idle = new EnemyAnimationState(EnemyAnimationType.Idle, enemyAnimatorController);
         var spawn = new EnemyAnimationState(EnemyAnimationType.Spawn, enemyAnimatorController);
-        var walk = new EnemyMoveAroundPlayerState(enemyConfiguration, player, transform, enemyAnimatorController);
+        var walk = new EnemyMoveAroundPlayerState(enemyConfiguration, player, transform, enemyAnimatorController, speedMultiplier);
         var attackState = new EnemyShoot(player, transform, projectile, enemyAnimatorController);
         flip = new EnemyGetHitState(flipObject);
 

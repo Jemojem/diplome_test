@@ -13,19 +13,26 @@ public class ShopSystem : MonoBehaviour
     [SerializeField] private DrawingCanvas canvas;
     [SerializeField] private TriggerZone _nextRound;
     [SerializeField] private ArtifactManager artifactManager;
+    [SerializeField] private GameParamSystem gameParamSystem;
 
     private bool isDestroy;
+    private static int amountRestart = 0;
 
     private void Awake()
     {
         artifactManager = FindObjectOfType<ArtifactManager>();
+        if (gameParamSystem == null)
+            gameParamSystem = FindObjectOfType<GameParamSystem>();
+
         _nextRound.OnTriggerEnterCompleted += EnterCompleted;
-        reloadSlot.Initialize(reloadConfiguration);
+        var priceMultiplier = gameParamSystem != null ? gameParamSystem.ShopPriceMultiplier : 1f;
+        priceMultiplier += amountRestart;
+        reloadSlot.Initialize(reloadConfiguration, priceMultiplier);
         reloadSlot.OnPurchaseEvent += OnReloadPurchaseEvent;
         foreach (var shopSlot in shopSlots)
         {
             var randomChance = shopSlots.Last() == shopSlot ? petConfiguration : GetRandomShopConfiguration();
-            shopSlot.Initialize(randomChance);
+            shopSlot.Initialize(randomChance, priceMultiplier);
             shopSlot.OnPurchaseEvent += OnPurchaseEvent;
         }
     }
@@ -34,6 +41,7 @@ public class ShopSystem : MonoBehaviour
     {
         if (isDestroy) return;
         isDestroy = true;
+        amountRestart = 0;
         _nextRound.transform.DOScale(0f, 0.5f).SetEase(Ease.OutBounce);
         foreach (var slot in shopSlots)
         {
@@ -51,6 +59,7 @@ public class ShopSystem : MonoBehaviour
 
     private void OnReloadPurchaseEvent(ShopSlot obj)
     {
+        amountRestart++;
         reloadSlot.GetComponent<TwoObjectsAnimator>().HideWithExplosion();
         foreach (var slot in shopSlots)
         {

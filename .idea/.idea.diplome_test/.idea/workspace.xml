@@ -6,31 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="4d51e888-086c-448a-b2b0-e59a5fd3be69" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Beograd SDF 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Beograd SDF 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Beograd SDF.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Beograd SDF.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Beograd.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Beograd.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/KyrillaSansSerif-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/KyrillaSansSerif-Black.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Momster SDF.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Momster SDF.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Momster.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Momster.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/RUSKOF.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/RUSKOF.ttf.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/CharacterChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/CharacterChanger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprite/конец забега/реф.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Sprite/конец забега/реф.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wizard - 2D Character/Sprites/Player2.psb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wizard - 2D Character/Sprites/Player2.psb.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wizard - 2D Character/Sprites/PlayerTest.psb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wizard - 2D Character/Sprites/PlayerTest.psb.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wizard - 2D Character/Sprites/Player_3.psb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Wizard - 2D Character/Sprites/Player_3.psb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyMagicStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyMagicStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyMoveAroundPlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyMoveAroundPlayerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyWalkState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyWalkState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/OnPlayerTriggerDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/OnPlayerTriggerDamage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/MainMenu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/MainMenu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CharacterParamSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CharacterParamSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerAnimatorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerAnimatorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerCharacteristicsDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerCharacteristicsDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,18 +48,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;bogdan-branch&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.55f1\Editor\Unity.exe" />
@@ -129,7 +121,7 @@
       <workItem from="1761933447777" duration="4869000" />
       <workItem from="1762013829081" duration="1909000" />
       <workItem from="1762180951804" duration="1632000" />
-      <workItem from="1762258541221" duration="1192000" />
+      <workItem from="1762258541221" duration="4459000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f44f230caf36a4a8c7d1e313aed743, type: 3}
+  m_Name: Hard
+  m_EditorClassIdentifier: 
+  <DefaultShopPriceMultiplier>k__BackingField: 1
+  <DefaultEnemyDamageMultiplier>k__BackingField: 1
+  <DefaultEnemyHealthMultiplier>k__BackingField: 1
+  <DefaultEnemySpeedMultiplier>k__BackingField: 1
+  <DefaultEnemySpawnCooldown>k__BackingField: 0.25
+  <DefaultWaveCount>k__BackingField: 5
+  <DefaultWaveDuration>k__BackingField: 60
+  <DefaultLuckyChest>k__BackingField: 10
+  <DefaultLevelReward>k__BackingField: 100
+  <LevelProgression>k__BackingField:
+    <ShopPriceMultiplierIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <EnemyDamageMultiplierIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <EnemyHealthMultiplierIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <EnemySpeedMultiplierIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <EnemySpawnCooldownIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <WaveCountIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <WaveDurationIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <LuckyChestIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0
+    <LevelRewardIncrease>k__BackingField:
+      <Type>k__BackingField: 0
+      <Value>k__BackingField: 0

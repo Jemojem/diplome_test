@@ -65,9 +65,6 @@ public class PlayerCharacteristicsDisplay : MonoBehaviour
         if (config.DefaultMoneyPerLevel != 0)
             lines.AppendLine($"Деньги за уровень: {config.DefaultMoneyPerLevel}");
         
-        if (config.DefaultLuckyChest != 0)
-            lines.AppendLine($"Удача сундука: {config.DefaultLuckyChest}");
-        
         if (config.CanAttackMelee)
             lines.AppendLine("Может атаковать ближний бой");
         

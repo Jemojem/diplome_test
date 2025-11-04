@@ -21,15 +21,18 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
     protected int currentHealth;
     protected EnemyAttackState enemyAttackState;
     protected CharacterParamSystem characterParamSystem;
+    protected GameParamSystem gameParamSystem;
 
     public event Action OnEnemyDead;
     public Transform Target => player;
 
-    public void Initialize(Transform player, CharacterParamSystem characterParamSystem)
+    public void Initialize(Transform player, CharacterParamSystem characterParamSystem, GameParamSystem gameParamSystem)
     {
         this.characterParamSystem = characterParamSystem;
+        this.gameParamSystem = gameParamSystem;
         this.player = player;
-        currentHealth = enemyConfiguration.Health;
+        var healthMultiplier = gameParamSystem != null ? gameParamSystem.EnemyHealthMultiplier : 1f;
+        currentHealth = Mathf.RoundToInt(enemyConfiguration.Health * healthMultiplier);
         InitializeStateMachine();
     }
 
@@ -37,14 +40,17 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
     {
         enemyAnimatorController = new EnemyAnimatorController(animator);
 
+        var damageMultiplier = gameParamSystem != null ? gameParamSystem.EnemyDamageMultiplier : 1f;
+        var speedMultiplier = gameParamSystem != null ? gameParamSystem.EnemySpeedMultiplier : 1f;
+
         var idle = new EnemyAnimationState(EnemyAnimationType.Idle, enemyAnimatorController);
         var spawn = new EnemyAnimationState(EnemyAnimationType.Spawn, enemyAnimatorController);
-        var walk = new EnemyWalkState(enemyConfiguration, enemyAnimatorController, transform, player);
+        var walk = new EnemyWalkState(enemyConfiguration, enemyAnimatorController, transform, player, speedMultiplier);
         flip = new EnemyGetHitState(flipObject);
 
         flip.AddTransition(new StateTransition(idle, new TemporaryCondition(flipObject.FlipDuration)));
 
-        enemyAttackState = new EnemyAttackState(enemyConfiguration, enemyAnimatorController, transform, player);
+        enemyAttackState = new EnemyAttackState(enemyConfiguration, enemyAnimatorController, transform, player, damageMultiplier);
 
         DOVirtual.DelayedCall(0.6f, () => { CanTakeDamage = true; });
         spawn.AddTransition(new StateTransition(idle,
@@ -127,7 +133,8 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
                     Instantiate(droppedLoot, transform.position, Quaternion.identity);
                 }
 
-                if (Random.Range(0, 100) < characterParamSystem.LuckyChest)
+                var luckyChest = gameParamSystem != null ? gameParamSystem.LuckyChest : 0;
+                if (Random.Range(0, 100) < luckyChest)
                 {
                     Instantiate(chest, transform.position, Quaternion.identity);
                 }

@@ -13,15 +13,18 @@ public class ShopSlot : MonoBehaviour
     [SerializeField] private TMP_Text _description;
 
     private ShopConfiguration _shopConfiguration;
+    private float _priceMultiplier = 1f;
     public event Action<ShopSlot> OnPurchaseEvent;
 
     public ShopConfiguration ShopConfiguration => _shopConfiguration;
-    public void Initialize(ShopConfiguration shopConfiguration)
+    public void Initialize(ShopConfiguration shopConfiguration, float priceMultiplier = 1f)
     {
         triggerZone.OnTriggerEnterCompleted += Purchase;
         _shopConfiguration = shopConfiguration;
+        _priceMultiplier = priceMultiplier;
         _shopImage.sprite = shopConfiguration.Sprite;
-        _price.text = shopConfiguration.Price.ToString();
+        var finalPrice = Mathf.RoundToInt(shopConfiguration.Price * _priceMultiplier);
+        _price.text = finalPrice.ToString();
         if (shopConfiguration.Artifact != null)
         {
             _shopImage.sprite = shopConfiguration.Artifact.Icon;
@@ -33,9 +36,10 @@ public class ShopSlot : MonoBehaviour
     public void Purchase()
     {
         var counter = FindAnyObjectByType<CoinCounter>();
-        if (counter.AmountCoin >= _shopConfiguration.Price)
+        var finalPrice = Mathf.RoundToInt(_shopConfiguration.Price * _priceMultiplier);
+        if (counter.AmountCoin >= finalPrice)
         {
-            counter.ReduceCoinCount(_shopConfiguration.Price);
+            counter.ReduceCoinCount(finalPrice);
             OnPurchaseEvent?.Invoke(this);
         }
     }

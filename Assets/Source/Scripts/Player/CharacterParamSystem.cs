@@ -19,7 +19,6 @@ public class CharacterParamSystem : MonoBehaviour
     private int regenerationBonus;
     private int luckyBonus;
     private int moneyPerLevelBonus;
-    private int luckyChestBonus;
     private float spawnProjectileCooldownBonus;
     private float projectileAmountBonus;
 
@@ -37,7 +36,6 @@ public class CharacterParamSystem : MonoBehaviour
     private float regenerationPercentBonus;
     private float luckyPercentBonus;
     private float moneyPerLevelPercentBonus;
-    private float luckyChestPercentBonus;
     private float spawnProjectileCooldownPercentBonus;
     private float projectileAmountPercentBonus;
 
@@ -81,9 +79,6 @@ public class CharacterParamSystem : MonoBehaviour
     public int MoneyPerLevel => Mathf.RoundToInt((playerConfiguration.DefaultMoneyPerLevel + moneyPerLevelBonus) *
                                                  (1 + moneyPerLevelPercentBonus / 100f));
 
-    public int LuckyChest => Mathf.RoundToInt((playerConfiguration.DefaultLuckyChest + luckyChestBonus) *
-                                              (1 + luckyChestPercentBonus / 100f));
-
     public float SpawnProjectileCooldown =>
         (playerConfiguration.DefaultSpawnProjectileCooldown + spawnProjectileCooldownBonus) *
         (1 + spawnProjectileCooldownPercentBonus / 100f);
@@ -103,7 +98,6 @@ public class CharacterParamSystem : MonoBehaviour
     public void AddRegenerationBonus(int bonus) => regenerationBonus += bonus;
     public void AddLuckyBonus(int bonus) => luckyBonus += bonus;
     public void AddMoneyPerLevelBonus(int bonus) => moneyPerLevelBonus += bonus;
-    public void AddLuckyChestBonus(int bonus) => luckyChestBonus += bonus;
     public void AddSpawnProjectileCooldownBonus(float bonus) => spawnProjectileCooldownBonus += bonus;
     public void AddProjectileAmountBonus(float bonus) => projectileAmountBonus += bonus;
 
@@ -119,7 +113,6 @@ public class CharacterParamSystem : MonoBehaviour
     public void AddRegenerationPercentBonus(float percent) => regenerationPercentBonus += percent;
     public void AddLuckyPercentBonus(float percent) => luckyPercentBonus += percent;
     public void AddMoneyPerLevelPercentBonus(float percent) => moneyPerLevelPercentBonus += percent;
-    public void AddLuckyChestPercentBonus(float percent) => luckyChestPercentBonus += percent;
     public void AddSpawnProjectileCooldownPercentBonus(float percent) => spawnProjectileCooldownPercentBonus += percent;
     public void AddProjectileAmountPercentBonus(float percent) => projectileAmountPercentBonus += percent;
 
@@ -141,13 +134,13 @@ public class CharacterParamSystem : MonoBehaviour
         // Сброс абсолютных бонусов
         speedBonus = attackSpeedBonus = attackRangeBonus = spawnProjectileCooldownBonus = projectileAmountBonus = 0f;
         attackDamageBonus = attachDamageBonus = critChanceBonus = armorBonus =
-            missBonus = regenerationBonus = luckyBonus = moneyPerLevelBonus = luckyChestBonus = 0;
+            missBonus = regenerationBonus = luckyBonus = moneyPerLevelBonus = 0;
 
         // Сброс процентных бонусов
         speedPercentBonus = attackSpeedPercentBonus = attackRangePercentBonus =
             attackDamagePercentBonus = attachDamagePercentBonus = critChancePercentBonus =
                 armorPercentBonus = missPercentBonus = regenerationPercentBonus =
-                    luckyPercentBonus = moneyPerLevelPercentBonus = luckyChestPercentBonus =
+                    luckyPercentBonus = moneyPerLevelPercentBonus =
                         spawnProjectileCooldownPercentBonus = projectileAmountPercentBonus = 0f;
     }
 }

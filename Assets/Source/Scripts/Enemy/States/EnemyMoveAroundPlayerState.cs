@@ -7,6 +7,7 @@ public class EnemyMoveAroundPlayerState : State
     private readonly EnemyConfiguration _enemyConfiguration;
     private Transform enemy; // Ссылка на игрока
     private readonly EnemyAnimatorController _animatorController;
+    private readonly float speedMultiplier;
     private float orbitRadius = 4f; // Радиус движения вокруг игрока
     private float waitTime = 1f; // Пауза между сменой точек
 
@@ -14,12 +15,13 @@ public class EnemyMoveAroundPlayerState : State
     private float waitTimer;
     private Vector3 originalScale;
 
-    public EnemyMoveAroundPlayerState(EnemyConfiguration enemyConfiguration, Transform player, Transform enemy, EnemyAnimatorController animatorController)
+    public EnemyMoveAroundPlayerState(EnemyConfiguration enemyConfiguration, Transform player, Transform enemy, EnemyAnimatorController animatorController, float speedMultiplier = 1f)
     {
         this.player = player;
         _enemyConfiguration = enemyConfiguration;
         this.enemy = enemy;
         _animatorController = animatorController;
+        this.speedMultiplier = speedMultiplier;
     }
 
     public override void OnStateEnter()
@@ -43,7 +45,7 @@ public class EnemyMoveAroundPlayerState : State
     {
         if (player == null) return;
         enemy.position =
-            Vector2.MoveTowards(enemy.position, targetPoint, _enemyConfiguration.MoveSpeed * Time.deltaTime);
+            Vector2.MoveTowards(enemy.position, targetPoint, _enemyConfiguration.MoveSpeed * speedMultiplier * Time.deltaTime);
         if (Vector2.Distance(enemy.position, targetPoint) < 0.1f)
         {
             waitTimer += Time.deltaTime;

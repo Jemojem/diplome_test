@@ -37,7 +37,7 @@ public class PlayerAnimatorController
             }
         }
 
-        Debug.LogError($"Animation clip {animationType} doesn't exist");
+        //Debug.LogError($"Animation clip {animationType} doesn't exist");
         return 0;
     }
 }

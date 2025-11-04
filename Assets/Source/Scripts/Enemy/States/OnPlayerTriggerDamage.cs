@@ -8,7 +8,10 @@ public class OnPlayerTriggerDamage : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<PlayerHealth>().TakeDamage(_enemyConfiguration.Damage);
+            var gameParamSystem = FindObjectOfType<GameParamSystem>();
+            var damageMultiplier = gameParamSystem != null ? gameParamSystem.EnemyDamageMultiplier : 1f;
+            var damage = Mathf.RoundToInt(_enemyConfiguration.Damage * damageMultiplier);
+            other.GetComponent<PlayerHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }
