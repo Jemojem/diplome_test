@@ -5,37 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d51e888-086c-448a-b2b0-e59a5fd3be69" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.diplome_test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/LevelParameters/Easy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configurations/LevelParameters/Easy.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/LevelParameters/Hard.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configurations/LevelParameters/Hard.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Configurations/LevelParameters/Medium.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Configurations/LevelParameters/Medium.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Chest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Chest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyMagicStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyMagicStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemySpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/EnemyStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameParamSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/GameParamSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyMoveAroundPlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyMoveAroundPlayerState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyWalkState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/EnemyWalkState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/OnPlayerTriggerDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Enemy/States/OnPlayerTriggerDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/GameAnalytics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/GameAnalytics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/GamePause.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/GamePause.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/LoseScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/WinLoseScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/LoseScreen.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/WinLoseScreen.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/MainMenu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/MainMenu/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/PauseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/PauseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinCounter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinPickaper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/CoinPickaper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerCharacteristicsDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerCharacteristicsDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Player/ProjectileSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Player/ProjectileSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/Shop/ShopSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Source/Scripts/CharacterChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Source/Scripts/CharacterChanger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +109,7 @@
       <workItem from="1762013829081" duration="1909000" />
       <workItem from="1762180951804" duration="1632000" />
       <workItem from="1762258541221" duration="4459000" />
-      <workItem from="1762347415296" duration="4582000" />
+      <workItem from="1762347415296" duration="5041000" />
     </task>
     <servers />
   </component>

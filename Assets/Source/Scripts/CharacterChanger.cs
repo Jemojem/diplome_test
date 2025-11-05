@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using DG.Tweening;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
