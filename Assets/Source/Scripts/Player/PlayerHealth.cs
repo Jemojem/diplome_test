@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private HealthBarUI healthBarUI;
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private DamagePopupSpawner damagePopupSpawner;
+    [SerializeField] private GameParamSystem gameParamSystem;
 
     private int currentHealth;
 
@@ -52,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        SoundManager.PlaySound(SoundType.hit);
         var miss = characterParamSystem.Miss >= Random.Range(0, 100);
         if (miss)
         {
@@ -65,7 +67,8 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthBar();
         if (currentHealth <= 0)
         {
-            FindAnyObjectByType<LoseScreen>(FindObjectsInactive.Include).Show();
+            FindAnyObjectByType<WinLoseScreen>(FindObjectsInactive.Include).Show(false,
+                FindAnyObjectByType<GameManager>().currentLevel * gameParamSystem.gameConfiguration.MoneyPerWave);
             currentHealth = 0;
         }
     }

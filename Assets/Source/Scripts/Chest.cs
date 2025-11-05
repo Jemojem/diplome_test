@@ -86,6 +86,7 @@ public class Chest : MonoBehaviour
         else
             DropHealth();
         Destroy(gameObject, 2);
+        SoundManager.PlaySound(SoundType.chestOpen);
     }
 
     private void DropItem()

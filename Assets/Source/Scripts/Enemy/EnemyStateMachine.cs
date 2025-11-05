@@ -46,9 +46,11 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
         var idle = new EnemyAnimationState(EnemyAnimationType.Idle, enemyAnimatorController);
         var spawn = new EnemyAnimationState(EnemyAnimationType.Spawn, enemyAnimatorController);
         var walk = new EnemyWalkState(enemyConfiguration, enemyAnimatorController, transform, player, speedMultiplier);
-        flip = new EnemyGetHitState(flipObject);
-
-        flip.AddTransition(new StateTransition(idle, new TemporaryCondition(flipObject.FlipDuration)));
+        if (flipObject)
+        {
+            flip = new EnemyGetHitState(flipObject);
+            flip.AddTransition(new StateTransition(idle, new TemporaryCondition(flipObject.FlipDuration)));
+        }
 
         enemyAttackState = new EnemyAttackState(enemyConfiguration, enemyAnimatorController, transform, player, damageMultiplier);
 
@@ -97,6 +99,7 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
             return;
         }
 
+        SoundManager.PlaySound(SoundType.damageAtEnemy);
         if (CanTakeDamage == false) return;
         var analitycs = FindAnyObjectByType<GameAnalytics>();
         if (isPet)
@@ -118,9 +121,13 @@ public class EnemyStateMachine : MonoBehaviour, IDamageable
         var hit = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(hit, 3f);
         DamagePopupSpawner.Instance.Show(transform.position, amount, isCrit ? Color.red : Color.white);
-        stateMachine.SetState(flip);
+        if (flipObject)
+        {
+            stateMachine.SetState(flip);
+        }
         if (currentHealth <= 0)
         {
+            SoundManager.PlaySound(SoundType.deathememy);
             analitycs.KilledEnemy++;
             CanTakeDamage = false;
             stateMachine.SetState(new State());

@@ -40,7 +40,7 @@ public class GamePause : MonoBehaviour
     {
         if (_isPaused)
             return;
-
+        SoundManager.PlaySound(SoundType.setting);
         _isPaused = true;
         Time.timeScale = 0f;
 

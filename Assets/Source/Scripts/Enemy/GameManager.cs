@@ -31,7 +31,20 @@ public class GameManager : MonoBehaviour
 
     public void StartWave(int waveNumber)
     {
+        SoundManager.StopMusic();
         currentTween?.Kill();
+        switch (FindAnyObjectByType<MainMenu>(FindObjectsInactive.Include)._selectLevelManager.level)
+        {
+            case "easy":
+                SoundManager.PlayMusic(MusicType.easyG);
+                break;
+            case "med":
+                SoundManager.PlayMusic(MusicType.mediumG);
+                break;
+            case "hard":
+                SoundManager.PlayMusic(MusicType.hardG);
+                break;
+        }
 
         waveText.text = $"ВОЛНА {waveNumber}";
 
@@ -77,8 +90,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         currentLevel++;
-        if (gameParamSystem != null)
-            gameParamSystem.ApplyLevelProgression();
+        if (gameParamSystem != null) gameParamSystem.ApplyLevelProgression();
         StartWave(currentLevel);
     }
 
@@ -106,7 +118,7 @@ public class GameManager : MonoBehaviour
         StopAllCoroutines();
         foreach (var enemyState in FindObjectsByType<EnemyStateMachine>(FindObjectsSortMode.None))
         {
-            enemyState.TakeDamage(1000,true);
+            enemyState.TakeDamage(1000, true);
         }
 
         var levelReward = gameParamSystem != null ? gameParamSystem.LevelReward : 0;
@@ -115,6 +127,27 @@ public class GameManager : MonoBehaviour
             CoinCounter.Instance.SpawnFlyingCoin(Vector3.zero, levelReward);
         }
 
+        if (currentLevel >= gameParamSystem.WaveCount)
+        {
+            FindAnyObjectByType<WinLoseScreen>(FindObjectsInactive.Include).Show(true,
+                currentLevel * gameParamSystem.gameConfiguration.MoneyPerWave);
+            yield break;
+        }
+
+        SoundManager.PlaySound(SoundType.wavecompleted);
         spawner.SpawnShop();
+        SoundManager.StopMusic();
+        switch (FindAnyObjectByType<MainMenu>(FindObjectsInactive.Include)._selectLevelManager.level)
+        {
+            case "easy":
+                SoundManager.PlayMusic(MusicType.easyShop);
+                break;
+            case "med":
+                SoundManager.PlayMusic(MusicType.mediumShop);
+                break;
+            case "hard":
+                SoundManager.PlayMusic(MusicType.hardShop);
+                break;
+        }
     }
 }

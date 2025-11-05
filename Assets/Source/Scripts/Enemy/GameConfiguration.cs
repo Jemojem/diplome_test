@@ -15,6 +15,7 @@ public class GameConfiguration : ScriptableObject
     [field: Header("Wave")]
     [field: SerializeField] public int DefaultWaveCount { get; private set; } = 5;
     [field: SerializeField] public float DefaultWaveDuration { get; private set; } = 60f;
+    [field: SerializeField] public int MoneyPerWave { get; private set; } = 5;
 
     [field: Header("Loot")]
     [field: SerializeField] public int DefaultLuckyChest { get; private set; } = 10;

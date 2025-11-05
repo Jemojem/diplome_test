@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("Настройки спауна")] 
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private GameObject magicPrefab;
+    [SerializeField] private GameObject robotPrefab;
 
     [SerializeField] private CharacterParamSystem characterParamSystem;
     [SerializeField] private GameParamSystem gameParamSystem;
@@ -31,6 +32,10 @@ public class EnemySpawner : MonoBehaviour
         if (gameManager.currentLevel > 1)
         {
             prefab = Random.Range(0,10) < 2 ? magicPrefab : prefab;
+        }
+        if (gameManager.currentLevel > 2)
+        {
+            prefab = Random.Range(0,10) < 3 ? robotPrefab : prefab;
         }
         var enemy = Instantiate(prefab, spawnPosition, Quaternion.identity);
         var enemyState = enemy.GetComponent<EnemyStateMachine>();

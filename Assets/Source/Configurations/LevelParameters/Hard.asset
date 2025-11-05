@@ -16,7 +16,7 @@ MonoBehaviour:
   <DefaultEnemyDamageMultiplier>k__BackingField: 1
   <DefaultEnemyHealthMultiplier>k__BackingField: 1
   <DefaultEnemySpeedMultiplier>k__BackingField: 1
-  <DefaultEnemySpawnCooldown>k__BackingField: 0.25
+  <DefaultEnemySpawnCooldown>k__BackingField: 1
   <DefaultWaveCount>k__BackingField: 5
   <DefaultWaveDuration>k__BackingField: 60
   <DefaultLuckyChest>k__BackingField: 10

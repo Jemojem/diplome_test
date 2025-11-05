@@ -14,10 +14,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button _closeSelectGameButton;
     [SerializeField] private Button _startGame;
     [SerializeField] private GameManager _gameManager;
-    [SerializeField] private SelectLevelManager _selectLevelManager;
+    [SerializeField] public SelectLevelManager _selectLevelManager;
 
     private void Awake()
     {
+        SoundManager.PlayMusic(MusicType.meta);
         _selectGameCanvasGroup.gameObject.SetActive(false);
         _selectLevelManager.Initialize();
         _closeSelectGameButton.onClick.AddListener(() => _selectGameCanvasGroup.DOFade(0, 0.3f).OnComplete(() =>
@@ -61,22 +62,26 @@ public class SelectLevelManager
     [SerializeField] private Button _mediumb;
     [SerializeField] private Button _hardb;
 
+    public string level;
     public event Action Play;
 
     public void Initialize()
     {
         _easyb.onClick.AddListener(() =>
         {
+            level = "easy";
             _paramSystem.gameConfiguration = _easy;
             Play?.Invoke();
         });
         _mediumb.onClick.AddListener(() =>
         {
+            level = "med";
             _paramSystem.gameConfiguration = _medium;
             Play?.Invoke();
         });
         _hardb.onClick.AddListener(() =>
         {
+            level = "hard";
             _paramSystem.gameConfiguration = _hard;
             Play?.Invoke();
         });

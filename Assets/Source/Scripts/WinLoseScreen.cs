@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoseScreen : MonoBehaviour
+public class WinLoseScreen : MonoBehaviour
 {
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Button _loseButton;
@@ -15,14 +15,25 @@ public class LoseScreen : MonoBehaviour
     [SerializeField] private TMP_Text _damagePets;
     [SerializeField] private TMP_Text _amountPets;
     [SerializeField] private TMP_Text _killedEnemy;
+    [SerializeField] private TMP_Text _winLoseText;
     [SerializeField] private CanvasGroup _gameCanvas;
     private bool _isShowed;
-
-    public void Show()
+    public static int addReward;
+    public void Show(bool isWin, int reward)
     {
         if(_isShowed) return;
+        if (isWin)
+        {
+            _winLoseText.text = "Победа!";
+        }
+        else
+        {
+            _winLoseText.text = "Поражение!";
+        }
+        addReward = reward;
+        SoundManager.PlaySound(SoundType.defeat);
         _isShowed = true;
-        _amountMoney.text = _gameAnalytics.TakedMoney.ToString();
+        _amountMoney.text = addReward.ToString();
         _damagePlayer.text ="Урон игрока "+ _gameAnalytics.DamagePlayer.ToString();
         _damagePets.text ="Урон петов "+ _gameAnalytics.DamagePets.ToString();
         _amountPets.text =_gameAnalytics.AmountPets.ToString();

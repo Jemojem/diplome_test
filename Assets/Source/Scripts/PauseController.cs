@@ -10,6 +10,7 @@ public class PauseController : MonoBehaviour
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private CanvasGroup _pauseCanvasGroup;
     [SerializeField] private float _fadeDuration = 0.3f;
+    [SerializeField] private SoundConfiguration _soundConfigurations;
 
     private const string SoundPrefsKey = "SoundVolume";
     private const string MusicPrefsKey = "MusicVolume";
@@ -20,6 +21,9 @@ public class PauseController : MonoBehaviour
     private void Awake()
     {
         LoadSettings();
+        SoundManager.SetSoundVolume(_sound);
+        SoundManager.SetMusicVolume(_music);
+        SoundManager.Initialize(_soundConfigurations);
         InitializeButtons();
         InitializeSliders();
         UpdateCanvasGroupVisibility();
@@ -55,7 +59,7 @@ public class PauseController : MonoBehaviour
     {
         if (_isPaused)
             return;
-
+        SoundManager.PlaySound(SoundType.setting);
         _isPaused = true;
         Time.timeScale = 0f;
 
@@ -82,12 +86,14 @@ public class PauseController : MonoBehaviour
     private void OnSoundChanged(float value)
     {
         _sound = value;
+        SoundManager.SetSoundVolume(value);
         SaveSettings();
     }
 
     private void OnMusicChanged(float value)
     {
         _music = value;
+        SoundManager.SetMusicVolume(value);
         SaveSettings();
     }
 

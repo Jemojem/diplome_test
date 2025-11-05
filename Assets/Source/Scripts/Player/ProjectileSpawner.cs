@@ -50,13 +50,17 @@ public class ProjectileSpawner : MonoBehaviour
         if (ammoToUse <= 0) return;
         if (characterParamSystem.CanAttackDistance)
         {
-            animator.Play("AttackDistance",2);
+            animator.Play("AttackDistance", 2);
             DOVirtual.DelayedCall(0.6f, () =>
             {
+                if (ammoToUse > 0) SoundManager.PlaySound(SoundType.shot);
                 for (int i = 0; i < ammoToUse; i++)
                 {
                     GameObject target = sorted[i % sorted.Length]; // round-robin по списку ближайших
-                    if (target != null) SpawnProjectileTowards(target.transform);
+                    if (target != null)
+                    {
+                        SpawnProjectileTowards(target.transform);
+                    }
                 }
             });
         }

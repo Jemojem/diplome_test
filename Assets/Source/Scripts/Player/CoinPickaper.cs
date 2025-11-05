@@ -14,7 +14,7 @@ public class CoinPickaper : MonoBehaviour
         transform.SetParent(other.transform);
         transform.DOLocalMove(Vector3.zero, 0.3f);
         transform.DOScale(Vector3.zero, 0.3f);
-
+        SoundManager.PlaySound(SoundType.coin);
         DOVirtual.DelayedCall(0.3f, () =>
         {
             Destroy(gameObject);

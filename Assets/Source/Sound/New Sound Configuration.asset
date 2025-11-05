@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fe8b69276c4f7e856a33b2c4a0f7cd, type: 3}
+  m_Name: New Sound Configuration
+  m_EditorClassIdentifier: 
+  _sounds:
+  - Sounds: {fileID: 8300000, guid: d4e63689f1da5504295228456962c71a, type: 3}
+    SoundType: 0
+  - Sounds: {fileID: 8300000, guid: 38125aa536d2ced4abd359a68f95c625, type: 3}
+    SoundType: 1
+  - Sounds: {fileID: 8300000, guid: 3a3534ecab52a5d4da8c82538285bb3d, type: 3}
+    SoundType: 2
+  - Sounds: {fileID: 8300000, guid: 6197112e44ce6e047b8122b16cade97c, type: 3}
+    SoundType: 3
+  - Sounds: {fileID: 8300000, guid: 58bd01143b541cf4fad32dec18abc146, type: 3}
+    SoundType: 5
+  - Sounds: {fileID: 8300000, guid: 42e022baca66c364db8f3dbf22fcc790, type: 3}
+    SoundType: 4
+  - Sounds: {fileID: 8300000, guid: 0d7f846bd3366c64baf956ebb2208bb0, type: 3}
+    SoundType: 6
+  - Sounds: {fileID: 8300000, guid: 893c678f19a791a48be2f567b10cec7a, type: 3}
+    SoundType: 7
+  - Sounds: {fileID: 8300000, guid: 579755f93ba2abd49951c65d2a0fe0fd, type: 3}
+    SoundType: 8
+  - Sounds: {fileID: 8300000, guid: 4f611d4643420a54286c39bf989f2af2, type: 3}
+    SoundType: 9
+  - Sounds: {fileID: 8300000, guid: 202e52484dcadcc46b841ca3937db216, type: 3}
+    SoundType: 10
+  _music:
+  - Sounds: {fileID: 8300000, guid: 800d404e5edc5ef4eb76428e37d4ca27, type: 3}
+    SoundType: 0
+  - Sounds: {fileID: 8300000, guid: ee89c31088f40a9459ea7c17cb785991, type: 3}
+    SoundType: 3
+  - Sounds: {fileID: 8300000, guid: aea643bafc3aec243a3ebe5512b2b50f, type: 3}
+    SoundType: 2
+  - Sounds: {fileID: 8300000, guid: 8d92f24e5dc92f24aa62c4be1f41e6ad, type: 3}
+    SoundType: 1
+  - Sounds: {fileID: 8300000, guid: aa9f2093133de0b4aa336056475c1032, type: 3}
+    SoundType: 4
+  - Sounds: {fileID: 8300000, guid: d3d84c3e35439a34eac5993a83b88db6, type: 3}
+    SoundType: 6
+  - Sounds: {fileID: 8300000, guid: 27bac3c9a0f37704f8c334081344f711, type: 3}
+    SoundType: 5
